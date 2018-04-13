@@ -1,0 +1,18 @@
+= Mercator for Kubernetes Helm
+
+Mercator is a templating wrapper for the excellent https://github.com/kubernetes/helm[Kubernetes Helm] package manager.
+
+Mercator's "Projections" allow complex deployment configurations to be captured while minimizing duplication of value
+files. This is particularly helpful in cases where two disparate environments have a great deal of overlap, but not 100%, such
+as a test environment where hostnames or secrets may differ, but port exposures and deployment layouts are identical. It could
+also be used in deployments where a number of services are deployed from a shared chart.
+
+== Usage:
+Mercator acts as a "first-pass" templater, much like Helm. Projection information is captured in a .yaml (default "projection.yaml")
+file and referenced in a "source" values file (default "src.values.yaml") using the general syntax [[ .Projection.fieldName ]].
+
+== Contributing
+Mercator is brand new, and almost certainly has issues. Feel free to contact me if you're interested in contributing. This is my first
+open-source project.
+
+Copyright 2018 Shane Siebken
