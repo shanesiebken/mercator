@@ -1,0 +1,13 @@
+= Example
+
+Environment: environment-1
+To install:
+    `$ helm install --name example-chart-environment-1 -f ./example/environment-1.values.yaml ./example-chart`
+To upgrade:
+    `$ helm install -f ./example/environment-1.values.yaml example-chart-environment-1 ./example-chart`
+
+Environment: environment-2
+To install:
+    `$ helm install --name example-chart-environment-2 -f ./example/environment-2.values.yaml ./example-chart`
+To upgrade:
+    `$ helm install -f ./example/environment-2.values.yaml example-chart-environment-2 ./example-chart`

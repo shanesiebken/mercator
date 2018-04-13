@@ -1,0 +1,9 @@
+name: Example
+chartName: example-chart
+projections:
+- name: environment-1
+  host: chart.example.1.com
+  tag: environment-1
+- name: environment-2
+  host: chart.example.2.com
+  tag: environment-2

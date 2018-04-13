@@ -1,0 +1,10 @@
+= {{ .Readme.name }}
+{{- $root := . -}}
+{{ range $projection := .Readme.projections }}
+
+Environment: {{ $projection.name }}
+To install:
+    `$ helm install --name {{ $root.Readme.chartName }}-{{ $projection.name }} -f {{ $root.Readme.destination }}{{ $projection.name }}.values.yaml {{ if $root.Readme.chartPath -}}{{ $root.Readme.chartPath }}{{ else }}./{{ $root.Readme.chartName }}{{- end -}}`
+To upgrade:
+    `$ helm install -f {{ $root.Readme.destination }}{{ $projection.name }}.values.yaml {{ $root.Readme.chartName }}-{{ $projection.name }} {{ if $root.Readme.chartPath -}}{{- $root.Readme.chartPath -}}{{ else }}./{{- $root.Readme.chartName -}}{{- end -}}`
+{{- end}}
